@@ -1,51 +1,33 @@
-% PlotRawTrajectories.m
-% File defining one of the methods of class BallisticDataAnalysis.
-% =========================================================================
-% Write something short.
-%
-% Describe what this function does and what it assumes
-% =========================================================================
-% modified (date)
-% by (who)
-% =========================================================================
-function success = PlotRawTrajectories(obj)
-    try
-         %disp(obj.SillyMessage);
-         % success = true;
-         time_data = Analysis.A(:,1);
-         xdata = Analysis.A(:,2:3:31);
-         ydata = Analysis.A(:,3:3:31);
-         zdata = Analysis.A(:,4:3:31);
-         
-         for i = 1:10
-            subplot(2,2,1)
-            plot(time_data,xdata(:,i), 'linewidth', 2)
-            xlabel('t')
-            ylabel('x')
-            hold on
-            subplot(2,2,2)
-            plot(time_data,ydata(:,i), 'linewidth', 2)
-            xlabel('t')
-            ylabel('y')
-            hold on
-            subplot(2,2,3)
-            plot(time_data,zdata(:,i), 'linewidth', 2)
-            xlabel('t')
-            ylabel('z')
-            hold on
+% File main.m
+% Simple MATLAB script to evaluate the tasks in Assignment 6.
 
-        end
-        %text(1, 1, 1, 'T=0s' )
-        %text(12, 20, 1, 'T=end' )
-        legend('Run 1', 'Run 2', 'Run 3', 'Run 4', 'Run 5', ...
-        'Run 6', 'Run 7', 'Run 8', 'Run 9', 'Run 10' )
+Analysis = BallisticDataAnalysis(csvread('PositionData.txt'));
 
-        %grid on
-    catch
-        warning('Something went wrong in running PlotRawTrajectories!');
-        success = false;
-    end
+try
+    % Evaluation of programming task 1.
+    Analysis.PlotRawTrajectories();
+    
+    % Evaluation of programming task 2.
+    Analysis.AvgVar();
+    
+    % Evaluation of programming task 3.
+    Analysis.AccelerationDueToGravity();
+    
+    % Evaluation of programming task 4.
+    Analysis.Speed();
+    
+    % Just because!
+    disp(' ');
+    disp(' ');
+    disp('==================================');
+    disp('It''s always sunny in Philadelphia!');
+    disp('==================================');
+catch
+    warning('Something went wrong with the data analysis.');
 end
-
-
-
+% Now test the documentation
+disp('Now the help files');
+help BalisticDataAnalysis 
+help PlotRawTrajectories 
+help AccelerationDueToGravity 
+help Speed 
