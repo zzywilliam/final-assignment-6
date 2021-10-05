@@ -5,8 +5,8 @@
 %
 % Describe what this function does and what it assumes
 % =========================================================================
-% modified (date)
-% by (who)
+% modified (10/05/21)
+% by (Muhtasim Ul Karim Sadaf)
 % =========================================================================
 function success = AvgVar(obj)
     try
