@@ -23,6 +23,14 @@ classdef BallisticDataAnalysis
         varx;
         vary;
         varz;
+        vel_x;
+        vel_y;
+        vel_z;
+        acc_x;
+        acc_y;
+        acc_z;
+        tot_acc;
+        acc_g;
     end
     
     properties (Constant)
@@ -56,7 +64,15 @@ classdef BallisticDataAnalysis
             obj.varx = varx;
             obj.vary = vary;
             obj.varz = varz;
-            
+            obj.vel_x = gradient(obj.meanx);
+            obj.vel_y = gradient(obj.meany);
+            obj.vel_z = gradient(obj.meanz);
+            obj.acc_x = gradient(obj.vel_x);
+            obj.acc_y = gradient(obj.vel_y);
+            obj.acc_z = gradient(obj.vel_z);
+            obj.tot_acc = sqrt(obj.acc_x.^2+obj.acc_y.^2+obj.acc_z.^2);
+            fit_p=fit(obj.A(:,1),obj.vel_z,'poly1');
+            obj.acc_g = fit_p.p1;
         end
     end
     
