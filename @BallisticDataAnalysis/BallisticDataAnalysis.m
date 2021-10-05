@@ -13,7 +13,10 @@ classdef BallisticDataAnalysis
     	%> The data of this class is stored is a matrix @c A, which is
     	%> initialized by the class constructor. @c A cannot be changed
     	%> after initialization.
-    	A;    	
+    	A;  
+        xdata;
+        ydata;
+        zdata;
     end
     
     properties (Constant)
@@ -29,6 +32,10 @@ classdef BallisticDataAnalysis
         % -----------------------------------------------------------------
 		function obj = BallisticDataAnalysis(Data)
 			obj.A = Data;
+            obj.xdata = Data;
+            obj.ydata = Data;
+            obj.zdata = Data;
+            
         end
     end
     
