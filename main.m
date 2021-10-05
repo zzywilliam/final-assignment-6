@@ -16,6 +16,9 @@ try
     % Evaluation of programming task 4.
     Analysis.Speed();
     
+    % Evaluation of programming task 5.
+    Analysis.MeanVelocityToAcceleration();
+    
     % Just because!
     disp(' ');
     disp(' ');
@@ -31,3 +34,4 @@ help BalisticDataAnalysis
 help PlotRawTrajectories 
 help AccelerationDueToGravity 
 help Speed 
+help MeanVelocityToAcceleration
