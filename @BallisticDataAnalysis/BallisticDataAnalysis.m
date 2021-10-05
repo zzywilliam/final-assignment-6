@@ -32,9 +32,12 @@ classdef BallisticDataAnalysis
         % -----------------------------------------------------------------
 		function obj = BallisticDataAnalysis(Data)
 			obj.A = Data;
-            obj.xdata = Data;
-            obj.ydata = Data;
-            obj.zdata = Data;
+            xdata = obj.A(:,2:3:31);
+            ydata = obj.A(:,3:3:31);
+            zdata = obj.A(:,4:3:31);
+            obj.xdata = xdata;
+            obj.ydata = ydata;
+            obj.zdata = zdata;
             
         end
     end
