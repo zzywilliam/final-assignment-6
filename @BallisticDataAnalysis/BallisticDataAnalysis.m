@@ -71,8 +71,8 @@ classdef BallisticDataAnalysis
             obj.acc_y = gradient(obj.vel_y);
             obj.acc_z = gradient(obj.vel_z);
             obj.tot_acc = sqrt(obj.acc_x.^2+obj.acc_y.^2+obj.acc_z.^2);
-            fit_p=fit(obj.A(:,1),obj.vel_z,'poly1');
-            obj.acc_g = fit_p.p1;
+            % fit_p=fit(obj.A(:,1),obj.vel_z,'poly1');
+            % obj.acc_g = fit_p.p1;
         end
     end
     
