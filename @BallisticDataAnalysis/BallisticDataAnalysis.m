@@ -17,6 +17,12 @@ classdef BallisticDataAnalysis
         xdata;
         ydata;
         zdata;
+        meanx;
+        meany;
+        meanz;
+        varx;
+        vary;
+        varz;
     end
     
     properties (Constant)
@@ -38,6 +44,18 @@ classdef BallisticDataAnalysis
             obj.xdata = xdata;
             obj.ydata = ydata;
             obj.zdata = zdata;
+            meanx = mean(xdata,2);
+            meany = mean(ydata,2);
+            meanz = mean(zdata,2);
+            varx = var(xdata,0,2);
+            vary = var(ydata,0,2);
+            varz = var(zdata,0,2);
+            obj.meanx = meanx;
+            obj.meany = meany;
+            obj.meanz = meanz;
+            obj.varx = varx;
+            obj.vary = vary;
+            obj.varz = varz;
             
         end
     end
