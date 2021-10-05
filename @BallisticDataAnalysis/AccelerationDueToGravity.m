@@ -5,8 +5,8 @@
 %
 % Describe what this function does and what it assumes
 % =========================================================================
-% modified (date)
-% by (who)
+% 10/05/2021
+% Ankan Dutta
 % =========================================================================
 function success = AccelerationDueToGravity(obj)
     try
