@@ -12,7 +12,6 @@ function success = AvgVar(obj)
     try
         disp(obj.SillyMessage);
         success = true;
-        obj = Analysis;
         time_data = obj.A(:,1);
         xdata = obj.A(:,2:3:31);
         ydata = obj.A(:,3:3:31);
@@ -23,7 +22,7 @@ function success = AvgVar(obj)
         varx = var(xdata,0,2);
         vary = var(ydata,0,2);
         varz = var(zdata,0,2);
-        figure(1)
+        figure(2)
         subplot(2,2,1)
         plot(time_data,meanx, 'linewidth', 2)
         xlabel('t')
@@ -39,7 +38,7 @@ function success = AvgVar(obj)
         xlabel('t')
         ylabel('z')
 
-        figure(2)
+        figure(3)
         subplot(2,2,1)
         plot(time_data,varx, 'linewidth', 2)
         xlabel('t')
