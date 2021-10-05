@@ -46,6 +46,9 @@ function success = MeanVelocityToAcceleration(obj)
         xlabel('time(sec)')
         ylabel('velocity(m/s)')
         legend('x velocity','y velocity','z velocity')
+        dim = [0.2 0.5 0.3 0.3];
+        str = 'x slope: 0, y slope: 0 z slope: -2.17';
+        annotation('textbox',dim,'String',str,'FitBoxToText','on');
         
         success = true;
     catch
